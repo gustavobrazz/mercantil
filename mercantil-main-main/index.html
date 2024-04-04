@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    <title>Mercantil Redutores</title>
+</head>
+
+<body>
+    <nav>
+        <div class="img-nav">
+            <img src="assets/logo_mercantil.png" alt="">
+
+        </div>
+    </nav>
+
+    <!-- GERAL -->
+    <div class="title">
+        <h1>ORÇAMENTO DE VENDA</h1>
+    </div>
+
+
+    <form id="meuFormulario">
+        <div class="geral">
+            <h1>Geral</h1>
+            <div class="row1">
+                <div class="box">
+                    <h2>Numero</h2>
+                    <input type="text" id="numero" required>
+                </div>
+
+                <div id="date" class="box">
+                    <h2> Data Validade </h2>
+                    <input type="text" id="datavalidade" onkeyup="formatarDataInput(this)" placeholder="dd/mm/aaaa">
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="resp-orc">Responsável orçamento</label>
+                    <input type="text" name="resp-orc" id="respOrcamento">
+                </div>
+                <div class="box">
+                    <label for="doc-resp">Documento pessoal</label>
+                    <input type="text" id="docpessoal" name="doc-resp" maxlength="13" onkeyup="handleDoc(event)" />
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="resp-orc">Forma de pagamento:</label>
+                    <input type="text" name="resp-orc" id="forma-pag">
+                </div>
+            </div>
+            <div class="row1">
+                <div id="tel" class="box">
+                    <label for="resp-orc">Telefone Direto:</label>
+                    <input type="tel" id="telefone-g" maxlength="15" onkeyup="handlePhone(event)" />
+                </div>
+                <div id="email" class="box">
+                    <label for="">Email:</label>
+                    <input type="email" id="email-g" placeholder="nome@exemplo.com">
+                </div>
+            </div>
+        </div>
+        <!-- CLIENTE -->
+        <div class="cliente">
+            <h1>Cliente</h1>
+            <div class="row1">
+                <div class="box">
+                    <label for="nome-c">Nome:</label>
+                    <input type="text" id="nome-c" name="nome-c">
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="nome-c">CPF/CNPJ:</label>
+                    <input type="text" id="cpf-cnpj" maxlength="18"
+                    onkeyup="handlecnpj(event)"  />
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="nome-tc">Contato:</label>
+                    <input type="text" id="contato">
+                </div>
+            </div>
+            <div class="row1">
+                <div id="tel" class="box">
+                    <label for="resp-orc">Telefone:</label>
+                    <input id="telefone-c" type="tel" maxlength="15" onkeyup="handlePhone(event)" />
+                </div>
+                <div id="email" class="box">
+                    <label for="doc-resp">Email:</label>
+                    <input type="email" id="email-c" placeholder="nome@exemplo.com">
+                </div>
+            </div>
+            <div class="row1">
+                <div id="tel" class="box">
+                    <label for="resp-orc">CEP:</label>
+                    <input type="text" id="cep-c" maxlength="9" onkeyup="handleCep(event)" />
+                </div>
+                <div id="email" class="box">
+                    <label for="doc-resp">Bairro:</label>
+                    <input type="text" id="bairro-c">
+                </div>
+            </div>
+            <div class="row1">
+                <div id="tel" class="box">
+                    <label for="resp-orc">Cidade:</label>
+                    <input type="text" id="cidade-c"/>
+                </div>
+                <div id="email" class="box">
+                    <label for="doc-resp">Endereço:</label>
+                    <input type="text" id="endereco-c">
+                </div>
+            </div>
+        </div>
+        <!-- PRODUTO -->
+        <div class="produto">
+                <h1>Produto <p id="cont"></p></h1>
+            <div id="item" class="row1">
+                <div class="box">
+                    <label for="nome-c">Item:</label>
+                    <input type="text" id="item-p">
+                </div>
+                <div class="box">
+                    <label for="nome-c">NCM:</label>
+                    <input type="text" id="ncm-p">
+                </div>
+                <div class="box">
+                    <label for="nome-c">Quantidade:</label>
+                    <input type="text" id="qtdade-p">
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="nome-c">Código</label>
+                    <input type="text" id="codigo-p">
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="nome-c">Descrição</label>
+                    <input type="text" id="descricao-p">
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="detalhes">Detalhes</label>
+                    <textarea name="detalhes" id="detalhes-p" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label for="nome-c"> Valor Unitário: </label>
+                    <input type="text" id="vlrunitario-p"  value="R$ ">
+                </div>
+                <div class="box">
+                    <label for="resp-orc">Valor total:</label>
+                    <input type="text" id="vlrtotal-p"  value="R$ "/>
+                </div>
+            </div>
+            <div id="btn" class="row1">
+                <button id="add">Adicionar produto</button>
+            </div>
+<!-- aqui -->
+            <div class="transporte">
+                <h1>Tranporte</h1>
+                <div class="row">
+                    <div class="box">
+                        <label for="transp">Transportador</label>
+                        <input type="text" id="transportador">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <label for="tp-frete">Tipo de Frete</label>
+                        <input type="text" id="tipofrete-t">
+                    </div>
+                </div>
+                <div id="tel" class="row">
+                    <div class="box">
+                        <label for="telefone-trasp">Telefone:</label>
+                        <input type="tel" id="telefone-t" maxlength="15" onkeyup="handlePhone(event)" >
+                    </div>
+                </div>
+                <div id="obs" class="row">
+                    <div class="box">
+                        <label for="obs">Observações</label>
+                        <textarea name="obs" id="obs-t" cols="30" rows="5"></textarea>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        
+        <div class="totais">
+            <h1>Totais</h1>
+            <div class="row1">
+                <div class="box">
+                    <label id="bold" for="nome-c"> Total liquido: </label>
+                    <input type="text" id="tot-l"  value="R$ " />
+                </div>
+                <div class="box">
+                    <label id="bold" for="resp-orc">Total ICMS (Incluso)</label>
+                    <input type="text" id="tot-icms-incluso"  value="R$ "/>
+                </div>
+            </div>
+            <div class="row1">
+                <div class="box">
+                    <label id="bold" for="nome-c"> Frete: </label>
+                    <input type="text" id="frete-t"  value="R$ ">
+                </div>
+                <div class="box">
+                    <label id="bold" for="resp-orc">TOTAL:</label>
+                    <input type="text" id="total-t"  value="R$ "/>
+                </div>
+            </div>
+        </div>
+
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>

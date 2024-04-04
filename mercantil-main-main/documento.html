@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="document.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <title>Documento</title>
+</head>
+
+<body>
+  <main id="conteudo">
+    <div>
+
+      <header>
+        <div id="logo-info">
+          <div id="img-logo">
+            <img src="assets/Mercantil.png" alt="">
+          </div>
+          <div id="info-header">
+            <p>MERCANTIL REDUTORES DE VELOCIDADE</p>
+            <div id="details">
+              <p>Estrada do Corta Rabicho ,181 Jd. Maragogipe</p>
+              <p>CEP: 08586-270 / Itaquaquecetuba SÃO PAULO-SP</p>
+              <p>TELEFONE: (11) 4641-2152 / (11) 95475-2063 </p>
+              <p>CNPJ: 13.690.174/0001-75</p>
+            </div>
+          </div>
+        </div>
+        <div id="datahora"></div>
+      </header>
+      <div>
+        <h1>ORÇAMENTO DE VENDA</h1>
+        <div id="line"></div>
+      </div>
+
+      <div id="campos">
+        <div id="geral">
+          <h2>Geral</h2>
+          <div class="campo">
+            <div class="line-campo">
+              <div class="dado">
+                <label id="bold" for="">Número:</label>
+                <input type="text" id="numeroDocumento" />
+              </div>
+              <div class="dado">
+                <label for="">Data Emissão:</label>
+                <input type="text" id="data" />
+              </div>
+              <div class="dado">
+                <label id="bold" for="">Data Validade:</label>
+                <input type="text" id="dataDocumento" />
+              </div>
+            </div>
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Forma de pagto:</label>
+                <input type="text" id="formaPagamento" />
+              </div>
+              <div class="dado">
+                <label for="">Documento Pessoal:</label>
+                <input type="text" id="docPessoal" />
+              </div>
+            </div>
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Resp. orçamento:</label>
+                <input type="text" id="respOrcamentoo" />
+              </div>
+            </div>
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Telefone Direto:</label>
+                <input type="text" id="telefoneG" />
+              </div>
+              <div class="dado">
+                <label for="">Email:</label>
+                <input type="text" id="emailG" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cliente">
+          <h2>Cliente</h2>
+          <div class="campo">
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Nome:</label>
+                <input type="text" id="nomeG" />
+              </div>
+              <div class="dado">
+                <label for="">CNPJ/CPF:</label>
+                <input id="cpfCnpj" type="text" />
+              </div>
+            </div>
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Contato:</label>
+                <input type="text" id="Contato" />
+              </div>
+              <div class="dado">
+                <label for="">Telefone:</label>
+                <input id="telefoneC" type="text" />
+              </div>
+            </div>
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Endereço:</label>
+                <input type="text" id="enderecoC" />
+              </div>
+              <div class="dado">
+                <label for="">Cidade:</label>
+                <input type="text" id="cidadeC" />
+              </div>
+            </div>
+            <div class="line-campo">
+              <div class="dado">
+                <label for="">Bairro:</label>
+                <input type="text" id="bairroC" />
+              </div>
+              <div class="dado">
+                <label for="">CEP:</label>
+                <input type="text" id="cepC" />
+              </div>
+              <div class="dado">
+                <label for="">Email:</label>
+                <input type="text" id="emailC" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="produto">
+          <h2>Produto</h2>
+          <div id="camp">
+          </div>
+        </div>
+        <div id="transporte">
+          <div class="campo">
+            <div class="line-campo">
+              <div class="dado">
+                <label id="bold" for="">Transportador:</label>
+                <input type="text" id="trasnportadorT" />
+              </div>
+              <div class="dado">
+                <label id="bold" for="">Telefone:</label>
+                <input type="text" id="telefoneT" />
+              </div>
+              <div class="dado">
+                <label id="bold" for="">Tipo frete:</label>
+                <input type="text" id="tipofreteT"/>
+              </div>
+            </div>
+            <div class="line-box">
+              <label id="bold" for="">Observações</label>
+              <textarea name="" id="obsT" cols="30" rows="10"> </textarea>
+            </div>
+          </div>
+        </div>
+        <div id="total">
+          <h2>Totais</h2>
+          <div class="campo">
+            <div class="line-campo">
+              <div class="dado">
+                <label id="bold" for="">Tot. Líquido:</label>
+                <input id="totL" type="text" />
+              </div>
+              <div class="dado" id="icms">
+                <label id="bold" for="">Tot. ICMS <br> (incluso):</label>
+                <input id="totICMS" type="text" />
+              </div>
+              <div class="dado">
+                <label id="bold" for="">Frete:</label>
+                <input id="freteT" type="text" />
+              </div>
+              <div class="dado">
+                <label id="bold" for="">Total:</label>
+                <input id="totalT" type="text" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+      <div id="line"></div>
+      <footer>
+        <p>Pagina: 1</p>
+        <p id="reporcamento">fdasf</p>
+        <p>Desenvolvido por: @lucas_savlis</p>
+      </footer>
+    </div>
+
+  </main>
+
+    <div id="btn">
+      <button onclick="imprimir()">Imprimir</button>
+      <button onclick="Voltar()">Novo Formulario</button>
+
+    </div>
+    <script type="text/javascript" src="./documento.js"></script>
+</body>
+
+
+
+</html>
